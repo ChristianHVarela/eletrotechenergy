@@ -18,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "ligacao")
+@Table(name = "connections")
 public class Connection extends EntityTenant {
 	
 	private static final long serialVersionUID = 1784100509295809828L;
