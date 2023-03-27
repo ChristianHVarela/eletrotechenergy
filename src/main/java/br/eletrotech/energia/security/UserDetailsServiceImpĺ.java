@@ -2,7 +2,6 @@ package br.eletrotech.energia.security;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,8 +13,12 @@ import br.eletrotech.energia.repository.UserRepository;
 @Component
 public class UserDetailsServiceImpĺ implements UserDetailsService {
 	
-	@Autowired
 	private UserRepository repository;
+
+	public UserDetailsServiceImpĺ(UserRepository repository) {
+		super();
+		this.repository = repository;
+	}
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
