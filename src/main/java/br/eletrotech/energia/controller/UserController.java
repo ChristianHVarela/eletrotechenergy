@@ -7,18 +7,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.eletrotech.energia.dto.ConnectionDTO;
-import br.eletrotech.energia.service.ConnectionService;
+import br.eletrotech.energia.dto.UserDTO;
+import br.eletrotech.energia.service.UserService;
 
 @RestController
-@RequestMapping("/connections")
-public class ConnectionController {
+@RequestMapping("/users")
+public class UserController {
 
 	@Autowired
-	private ConnectionService service;
+	private UserService service;
 	
 	@GetMapping
-	private List<ConnectionDTO> findAll(){
+	public List<UserDTO> findAll(){
 		return service.findAll();
 	}
 }

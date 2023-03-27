@@ -19,16 +19,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@Table(name = "connections")
-public class Connection extends EntityTenant {
+@Table(name = "users")
+public class User extends EntityTenant {
 	
-	private static final long serialVersionUID = 1784100509295809828L;
-	
+	private static final long serialVersionUID = 7376683692191821420L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@Column(length = 100,nullable = false)
+	private String name;
 	
-	@Column(nullable = false, unique = true)
-	private Long number;
+	@Column(length = 50,nullable = false, unique = true)
+	private String email;
 	
+	@Column(length = 10,nullable = false)
+	private String password;
 }
